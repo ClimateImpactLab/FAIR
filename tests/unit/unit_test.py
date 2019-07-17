@@ -382,3 +382,8 @@ def test_ozone_regression_equivalence():
     F2 = regress(fair.RCPs.rcp85.Emissions.emissions)
     assert F1==F2[100]
 
+
+def ecstcr_py3():
+    # see issue https://github.com/OMS-NetZero/FAIR/issues/66
+    tcrecs = [1.5, 2.75]
+    C45, F45, T45 = fair.forward.fair_scm(emissions=rcp45.Emissions.emissions, tcrecs = tcrecs)
